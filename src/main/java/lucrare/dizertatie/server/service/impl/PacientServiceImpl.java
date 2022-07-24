@@ -1,6 +1,7 @@
 package lucrare.dizertatie.server.service.impl;
 
 import lombok.RequiredArgsConstructor;
+import lucrare.dizertatie.common.exception.RepositoryException;
 import lucrare.dizertatie.server.mapper.daodto.PacientMapper;
 import lucrare.dizertatie.server.model.Pacient;
 import lucrare.dizertatie.server.persistence.dao.PacientDAO;
@@ -26,8 +27,13 @@ public class PacientServiceImpl implements PacientService {
     @Override
     public Pacient save(Pacient pacient) {
 
-        PacientDAO savedPacient = pacientRepository.save(pacientMapper.dto2dao(pacient));
+        try {
+            PacientDAO savedPacient = pacientRepository.save(pacientMapper.dto2dao(pacient));
 
-        return pacientMapper.dao2dto(savedPacient);
+            return pacientMapper.dao2dto(savedPacient);
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            throw new RepositoryException();
+        }
     }
 }

@@ -5,7 +5,6 @@ import lucrare.dizertatie.server.model.enums.GrupaSanguina;
 import lucrare.dizertatie.server.model.enums.Sex;
 
 import java.io.Serializable;
-import java.util.List;
 
 @Data
 public class Pacient implements Serializable {

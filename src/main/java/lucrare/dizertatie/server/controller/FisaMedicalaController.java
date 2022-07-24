@@ -18,7 +18,7 @@ public class FisaMedicalaController {
 
     private final FisaMedicalaService fisaMedicalaService;
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<FisaMedicala>> getAll() {
         return ResponseEntity.ok(fisaMedicalaService.getAll());
     }

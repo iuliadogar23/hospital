@@ -24,5 +24,4 @@ public enum AdusDeLa {
         return nume;
     }
 
-
 }

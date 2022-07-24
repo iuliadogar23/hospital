@@ -1,6 +1,7 @@
 package lucrare.dizertatie.server.service.impl;
 
 import lombok.RequiredArgsConstructor;
+import lucrare.dizertatie.common.exception.RepositoryException;
 import lucrare.dizertatie.server.mapper.daodto.FisaMedicalaMapper;
 import lucrare.dizertatie.server.model.FisaMedicala;
 import lucrare.dizertatie.server.persistence.dao.FisaMedicalaDAO;
@@ -26,8 +27,13 @@ public class FisaMedicalaServiceImpl implements FisaMedicalaService {
     @Override
     public FisaMedicala save(FisaMedicala fisaMedicala) {
 
-        FisaMedicalaDAO savedFisaMedicala = fisaMedicalaRepository.save(fisaMedicalaMapper.dto2dao(fisaMedicala));
+        try {
+            FisaMedicalaDAO savedFisaMedicala = fisaMedicalaRepository.save(fisaMedicalaMapper.dto2dao(fisaMedicala));
 
-        return fisaMedicalaMapper.dao2dto(savedFisaMedicala);
+            return fisaMedicalaMapper.dao2dto(savedFisaMedicala);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RepositoryException();
+        }
     }
 }
