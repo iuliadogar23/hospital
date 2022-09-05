@@ -30,7 +30,7 @@ public enum Triaj {
     RASH(26,"Tegumente","Eruptii"),
     ITCHING(27,"Tegumente","Prurit"),
     BURNS(28,"Tegumente","Arsuri"),
-    ACCIDENTAL_LOSS_OF_VISION(29, "Ochi", "Pierderea accidentala a vederii"),
+    ACCIDENTAL_LOSS_OF_VISION(29, "Ochi", "Pierderea vederii"),
     VISUAL_DISORDER(30, "Ochi", "Tulburari de vedere"),
     INTRAOCULAR_STRAIN_BODY(31, "Ochi", "Corp strain intraocular"),
     OTHER_OCULAR_MANIFESTATIONS(32, "Ochi", "Alte manifestari oculare"),

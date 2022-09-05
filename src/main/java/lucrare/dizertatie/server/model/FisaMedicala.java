@@ -19,6 +19,8 @@ public class FisaMedicala implements Serializable {
 
     private List<StarePacient> starePacient;
 
+    private List<ScorGlagow> scorGlagow;
+
     private ScorNaca scorNaca;
 
     private List<IstoricPatologic> antecedentePatologice;
@@ -62,5 +64,11 @@ public class FisaMedicala implements Serializable {
     private Long oraEvaluare;
 
     private String decizie;
+
+    private String diagnostic;
+
+    private Integer doctorAsignat;
+
+    private String doctorRecent;
 
 }

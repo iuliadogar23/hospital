@@ -12,12 +12,12 @@ import javax.persistence.*;
 public class StarePacientDAO {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "nr_fisa")
-    private FisaMedicalaDAO fisaMedicala;
+//    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    @JoinColumn(name = "nr_fisa")
+//    private FisaMedicalaDAO fisaMedicala;
 
     @Column
     private Long dataOra;

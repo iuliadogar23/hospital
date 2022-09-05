@@ -1,9 +1,7 @@
 package lucrare.dizertatie.server.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lucrare.dizertatie.server.model.enums.Glagow;
-import lucrare.dizertatie.server.persistence.dao.FisaMedicalaDAO;
 
 import java.io.Serializable;
 
@@ -11,9 +9,6 @@ import java.io.Serializable;
 public class ScorGlagow implements Serializable {
 
     private Integer id;
-
-    @JsonIgnore
-    private FisaMedicalaDAO fisaMedicala;
 
     private Glagow deschidereaOchilor;
 

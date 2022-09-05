@@ -1,10 +1,13 @@
 package lucrare.dizertatie.server.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lucrare.dizertatie.server.model.enums.GrupaSanguina;
 import lucrare.dizertatie.server.model.enums.Sex;
+import lucrare.dizertatie.server.persistence.dao.FisaMedicalaDAO;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Data
 public class Pacient implements Serializable {
@@ -19,7 +22,7 @@ public class Pacient implements Serializable {
 
     private String varsta;
 
-    private Long dataNastere;
+    private String dataNastere;
 
     private String cnp;
 

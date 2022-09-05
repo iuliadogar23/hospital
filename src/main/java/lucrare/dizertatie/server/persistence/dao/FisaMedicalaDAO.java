@@ -12,11 +12,11 @@ import java.util.List;
 public class FisaMedicalaDAO {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name = "nr_fisa")
     private Integer nrFisa;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "id_pacient")
     private PacientDAO pacient;
 
@@ -27,10 +27,12 @@ public class FisaMedicalaDAO {
     @Column
     private String motivulPrezentarii;
 
-    @OneToMany(mappedBy = "fisaMedicala")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "nr_fisa")
     private List<StarePacientDAO> starePacient;
 
-    @OneToMany(mappedBy = "fisaMedicala")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "nr_fisa")
     private List<ScorGlagowDAO> scorGlagow;
 
     @Enumerated
@@ -107,5 +109,14 @@ public class FisaMedicalaDAO {
 
     @Column
     private String decizie;
+
+    @Column
+    private String diagnostic;
+
+    @Column
+    private Integer doctorAsignat;
+
+    @Column(name = "titlu_doctor_asignat")
+    private String doctorRecent;
 
 }

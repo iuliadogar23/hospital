@@ -1,6 +1,7 @@
 package lucrare.dizertatie.server.service.impl;
 
 import lombok.RequiredArgsConstructor;
+import lucrare.dizertatie.common.exception.EntityNotFoundException;
 import lucrare.dizertatie.common.exception.RepositoryException;
 import lucrare.dizertatie.server.mapper.daodto.FisaMedicalaMapper;
 import lucrare.dizertatie.server.model.FisaMedicala;
@@ -35,5 +36,15 @@ public class FisaMedicalaServiceImpl implements FisaMedicalaService {
             e.printStackTrace();
             throw new RepositoryException();
         }
+    }
+
+    @Override
+    public FisaMedicala findById(Integer id) {
+        return fisaMedicalaMapper.dao2dto(fisaMedicalaRepository.findById(id).orElse(null));
+    }
+
+    public List<FisaMedicala> getAllActive()
+    {
+        return fisaMedicalaMapper.daoList2dtoList(fisaMedicalaRepository.findAllByStarePacientEvaluareIsNull());
     }
 }

@@ -12,8 +12,8 @@ public class StarePacient implements Serializable {
 
     private Integer id;
 
-    @JsonIgnore
-    private FisaMedicala fisaMedicala;
+//    @JsonIgnore
+//    private FisaMedicala fisaMedicala;
 
     private Long dataOra;
 

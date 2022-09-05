@@ -14,10 +14,6 @@ public class ScorGlagowDAO {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "nr_fisa")
-    private FisaMedicalaDAO fisaMedicala;
-
     @Enumerated(EnumType.STRING)
     private Glagow deschidereaOchilor;
 

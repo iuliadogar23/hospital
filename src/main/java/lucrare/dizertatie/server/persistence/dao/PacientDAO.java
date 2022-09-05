@@ -29,7 +29,7 @@ public class PacientDAO {
     private String varsta;
 
     @Column
-    private Long dataNastere;
+    private String dataNastere;
 
     @Column
     private String cnp;

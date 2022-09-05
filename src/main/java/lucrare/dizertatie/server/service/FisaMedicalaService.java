@@ -10,4 +10,8 @@ public interface FisaMedicalaService {
 
     FisaMedicala save(FisaMedicala fisaMedicala);
 
+    FisaMedicala findById(Integer id);
+
+    List<FisaMedicala> getAllActive();
+
 }
